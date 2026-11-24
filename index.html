@@ -2,142 +2,222 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#F8FAFC">
 <title>SACRI · Performance des réseaux en ligne</title>
-<link rel="icon" href="data:,">
+<link rel="icon" href="assets/logo-sacri.png">
 <link rel="preload" href="assets/Inter.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="stylesheet" href="assets/style.css?v=20261118a">
+<link rel="stylesheet" href="assets/style.css?v=2027b">
 </head>
 <body>
-<div class="demo"><div class="wrap"><b>Données de démonstration</b><span class="sep"> · </span><span>seuls les chiffres marqués « Réel » sont relevés ; tous les autres sont simulés</span></div></div>
+<div class="app">
 
-<header class="masthead">
-  <div class="wrap mh">
-    <img src="assets/logo-sacri.png" alt="SACRI" class="logo" width="229" height="114">
-    <div class="mh-txt">
-      <p class="eyebrow">Performance des réseaux en ligne</p>
-      <p class="arrete"><span class="lg">Période suivie : 7 décembre 2026 au 31 janvier 2027</span><span class="sm">7 déc. 2026 au 31 janv. 2027</span></p>
-    </div>
+<aside class="side" aria-label="Navigation">
+  <div class="brand"><img src="assets/logo-sacri.png" alt="SACRI"><div><p class="bn">Réseaux en ligne</p><p class="bs">8 semaines suivies</p></div></div>
+  <nav class="nav" id="nav">
+    <p class="nl">Pilotage</p>
+    <button class="ni" data-v="ensemble"><i data-i="layout-dashboard"></i><span>Vue d'ensemble</span></button>
+    <button class="ni" data-v="publications"><i data-i="image"></i><span>Publications</span><em class="k" id="k-pub"></em></button>
+    <button class="ni" data-v="avap"><i data-i="arrow-left-right"></i><span>Avant, après</span></button>
+    <button class="ni" data-v="moments"><i data-i="flame"></i><span>Meilleurs moments</span></button>
+    <p class="nl">Marché et événements</p>
+    <button class="ni" data-v="comparables"><i data-i="trophy"></i><span>Comparables</span><em class="k">8</em></button>
+    <button class="ni" data-v="sara"><i data-i="tent"></i><span>Salon SARA</span></button>
+  </nav>
+  <div class="side-f">
+    <span class="pill-demo"><i data-i="info"></i>Données de démonstration</span>
+    <p>Seuls les chiffres marqués « Réel » sont relevés. Tout le reste est simulé.</p>
   </div>
-</header>
+</aside>
 
-<main class="wrap">
-  <section class="intro">
-    <h1>Facebook, LinkedIn, Instagram et WhatsApp, semaine après semaine</h1>
-    <p class="lede">Le point de départ est l'audience <b>réellement relevée</b> sur les pages publiques de SACRI. La suite montre ce que le tableau suivrait pendant les 8 semaines du calendrier éditorial : abonnés, portée, interactions, demandes de devis et campagne du SARA.</p>
-  </section>
-
-  <!-- RÉEL -->
-  <section class="block real" id="reel">
-    <div class="bh"><span class="num">01</span><h2>Point de départ</h2><span class="tag tag-real">Réel · relevé le 16/11/2026</span></div>
-    <div class="rgrid">
-      <div class="rcard">
-        <div class="rh"><span class="ico fb" data-ico="facebook"></span>Facebook</div>
-        <p class="rv">29 634</p><p class="rl">abonnés à la page</p>
-        <p class="rd">0 avis client publié</p>
-      </div>
-      <div class="rcard">
-        <div class="rh"><span class="ico li" data-ico="linkedin"></span>LinkedIn</div>
-        <p class="rv"><small>environ</small> 840</p><p class="rl">abonnés à la page</p>
-        <p class="rd">1 à 3 publications par semaine</p>
-      </div>
-      <div class="rcard">
-        <div class="rh"><span class="ico li" data-ico="linkedin"></span>Ce qui fait réagir</div>
-        <p class="rv">3 <small>contre</small> 29</p><p class="rl">réactions : moyenne des 6 fiches produit, contre la distinction du Directeur Général</p>
-      </div>
-      <div class="rcard muted">
-        <div class="rh"><span class="ico ig" data-ico="instagram"></span><span class="ico wa" data-ico="whatsapp"></span>Instagram, WhatsApp</div>
-        <p class="rv">0</p><p class="rl">compte trouvé au nom de SACRI</p>
-        <p class="rd">Instagram et la liste WhatsApp partent de zéro</p>
+<div class="main">
+  <header class="bar">
+    <div class="bar-in">
+      <img src="assets/logo-sacri.png" alt="SACRI" class="brand-m">
+      <div class="crumb"><span class="grp">SACRI</span><i data-i="chevron-right" class="sep"></i><b id="crumb">Vue d'ensemble</b></div>
+      <div class="bar-r">
+        <span class="asof"><i data-i="calendar"></i><span id="per-l">7 déc. 2026 au 31 janv. 2027</span></span>
+        <span class="pill-demo top"><i data-i="info"></i><span class="lbl-l">Données de démonstration</span><span class="lbl-s">Démo</span></span>
       </div>
     </div>
-    <p class="src">Sources : page Facebook facebook.com/sacriofficiel (en-tête de page) ; page LinkedIn « SACRI CÔTE D'IVOIRE » et ses publications publiques du 16/09 au 29/10/2026. Consultées le 16/11/2026.</p>
-  </section>
+    <div class="fbar">
+      <div class="chips" id="f-net" role="group" aria-label="Réseau"></div>
+      <div class="sels">
+        <label class="sel"><i data-i="calendar"></i><select id="f-per" aria-label="Période"></select></label>
+        <label class="sel"><i data-i="tag"></i><select id="f-gam" aria-label="Gamme"></select></label>
+        <label class="sel"><i data-i="layers"></i><select id="f-typ" aria-label="Type de contenu"></select></label>
+        <button class="reset" id="reset" type="button"><i data-i="x"></i><span>Effacer</span></button>
+      </div>
+    </div>
+  </header>
 
-  <!-- DÉMO -->
-  <section class="block" id="demo">
-    <div class="bh"><span class="num">02</span><h2>Les 8 semaines du calendrier</h2><span class="tag tag-demo">Démonstration</span></div>
+  <main class="content">
+
+  <!-- VUE D'ENSEMBLE -->
+  <section class="view" id="v-ensemble">
+    <div class="hero">
+      <div class="hero-cov" style="background-image:url(img/couverture.jpg)"><span class="hero-tag"><i data-i="sparkles"></i>Charte SACRI 2027</span></div>
+      <div class="hero-b">
+        <div class="hero-av"><img src="assets/logo-sacri.png" alt="SACRI"></div>
+        <div class="hero-tx">
+          <h1>SACRI <i data-i="badge-check" class="vf"></i></h1>
+          <p class="hero-s">Représentant exclusif STIHL en Côte d'Ivoire depuis 1985 · Boulevard de Marseille, Abidjan</p>
+          <p class="hero-k" id="hero-k"></p>
+        </div>
+        <div class="hero-nets"><span class="hn fb" data-i="facebook"></span><span class="hn li" data-i="linkedin"></span><span class="hn ig" data-i="instagram"></span><span class="hn wa" data-i="message-circle"></span></div>
+      </div>
+    </div>
+    <div class="ribbon-w"><p class="rib-t"><i data-i="image"></i>La nouvelle série de visuels, publiée en janvier</p><div class="ribbon" id="ribbon"></div></div>
+    <div class="vh"><div><h1>Facebook, LinkedIn, Instagram et WhatsApp, semaine après semaine</h1><p class="lede">Point de départ réellement relevé le 16/11/2026, puis ce que le tableau suivrait pendant les 8 semaines du calendrier et les 30 premiers jours du lancement.</p></div></div>
+
     <div class="kpis" id="kpis"></div>
 
-    <div class="grid2">
+    <div class="tf" id="tf"></div>
+
+    <div class="card real">
+      <div class="ch-h"><div><p class="ct"><i data-i="badge-check"></i>Point de départ</p><p class="cs">Pages publiques de SACRI, consultées le 16/11/2026</p></div><span class="tag tag-real">Réel</span></div>
+      <div class="rgrid">
+        <div class="rc"><span class="ri fb" data-i="facebook"></span><div><p class="rv">29 634</p><p class="rl">abonnés Facebook</p><p class="rd">0 avis client publié</p></div></div>
+        <div class="rc"><span class="ri li" data-i="linkedin"></span><div><p class="rv"><small>environ</small> 840</p><p class="rl">abonnés LinkedIn</p><p class="rd">1 à 3 publications par semaine</p></div></div>
+        <div class="rc"><span class="ri gr" data-i="heart"></span><div><p class="rv">3 <small>contre</small> 29</p><p class="rl">réactions LinkedIn</p><p class="rd">moyenne des 6 fiches produit, contre la distinction du Directeur Général</p></div></div>
+        <div class="rc"><span class="ri ig" data-i="instagram"></span><div><p class="rv">0</p><p class="rl">compte Instagram ou WhatsApp</p><p class="rd">les deux canaux partent de zéro</p></div></div>
+      </div>
+      <p class="src">Sources : facebook.com/sacriofficiel (en-tête de page) ; page LinkedIn « SACRI CÔTE D'IVOIRE » et ses publications publiques du 16/09 au 29/10/2026.</p>
+    </div>
+
+    <div class="g2">
       <div class="card">
-        <p class="cap">Abonnés en fin de semaine, par réseau <span class="note">Facebook sur son axe, à droite</span></p>
+        <div class="ch-h"><div><p class="ct"><i data-i="users"></i>Abonnés gagnés depuis le relevé</p><p class="cs">Cumul par réseau, en fin de semaine</p></div><span class="tag">Démo</span></div>
         <div class="legend" id="leg-ab"></div>
-        <div class="ch"><canvas id="c-abonnes" aria-label="Évolution des abonnés"></canvas></div>
+        <div class="chart"><canvas id="c-ab" aria-label="Abonnés gagnés par réseau"></canvas></div>
       </div>
       <div class="card">
-        <p class="cap">Portée et interactions, tous réseaux, par semaine</p>
-        <div class="legend"><span><i class="sw o"></i>Personnes atteintes</span><span><i class="sw k"></i>Interactions</span></div>
-        <div class="ch"><canvas id="c-portee" aria-label="Portée et interactions"></canvas></div>
+        <div class="ch-h"><div><p class="ct"><i data-i="eye"></i>Portée et interactions par semaine</p><p class="cs">Barres : personnes atteintes par réseau ; ligne : interactions</p></div><span class="tag">Démo</span></div>
+        <div class="legend" id="leg-po"></div>
+        <div class="chart"><canvas id="c-po" aria-label="Portée et interactions"></canvas></div>
       </div>
     </div>
 
-    <div class="grid2 g-devis">
+    <div class="g3">
       <div class="card">
-        <p class="cap">Demandes de devis venues des réseaux, par canal</p>
-        <div class="donut-row">
-          <div class="ch ch-d"><canvas id="c-devis" aria-label="Demandes de devis par réseau"></canvas></div>
-          <ul class="dleg" id="dleg"></ul>
-        </div>
+        <div class="ch-h"><div><p class="ct"><i data-i="receipt"></i>Demandes de devis par canal</p><p class="cs">Venues des réseaux</p></div></div>
+        <div class="donut"><div class="chart cd"><canvas id="c-dv" aria-label="Demandes de devis par canal"></canvas></div><ul class="dleg" id="dleg"></ul></div>
       </div>
-      <div class="card">
-        <p class="cap">Les mêmes demandes, par gamme ou filiale</p>
-        <div class="bars" id="gammes"></div>
+      <div class="card span2">
+        <div class="ch-h"><div><p class="ct"><i data-i="target"></i>Demandes de devis par gamme ou filiale</p><p class="cs">Cliquez une barre pour filtrer la page</p></div></div>
+        <div class="chart ch-bars"><canvas id="c-gam" aria-label="Demandes de devis par gamme"></canvas></div>
       </div>
+    </div>
+
+    <div class="card">
+      <div class="ch-h"><div><p class="ct"><i data-i="sparkles"></i>Frise des publications</p><p class="cs">Chaque bulle est une publication : date, portée ; la taille suit les interactions</p></div></div>
+      <div class="chart ch-fr"><canvas id="c-fr" aria-label="Frise des publications"></canvas></div>
     </div>
   </section>
 
-  <section class="block" id="pubs">
-    <div class="bh"><span class="num">03</span><h2>Les publications rédigées</h2><span class="tag tag-demo">Démonstration</span></div>
-    <p class="sub">Les 6 publications du calendrier (celle de SAFIR part sur LinkedIn et Facebook) et les 9 du fil Instagram. Les autres publications du calendrier comptent dans les totaux par semaine.</p>
+  <!-- PUBLICATIONS -->
+  <section class="view" id="v-publications">
+    <div class="vh"><div><h1>Le mur des publications</h1><p class="lede">Calendrier éditorial, les 9 publications du lancement sur Instagram (30 premiers jours) et la nouvelle série de visuels, avec leur portée. Cliquez une publication pour l'ouvrir en entier.</p></div>
+      <div class="seg" id="mode"><button class="on" data-m="mur"><i data-i="image"></i>Mur</button><button data-m="table"><i data-i="layers"></i>Tableau</button></div></div>
     <div class="tools">
-      <div class="chips" id="chips" role="tablist" aria-label="Réseau"></div>
-      <label class="sort">Trier par
-        <select id="tri">
-          <option value="date">Date</option>
-          <option value="portee">Portée</option>
-          <option value="taux">Taux d'interaction</option>
-          <option value="devis">Demandes de devis</option>
-        </select>
-      </label>
-    </div>
-    <div class="card tcard">
-      <table class="tbl" id="t-pubs">
-        <thead><tr><th>Date</th><th>Réseau</th><th>Publication</th><th class="n">Portée</th><th class="n">Interactions</th><th class="n">Taux</th><th class="n">Devis</th></tr></thead>
-        <tbody></tbody>
-        <tfoot></tfoot>
-      </table>
+      <p class="cnt" id="cnt"></p>
+      <label class="sel sm"><i data-i="sliders-horizontal"></i><select id="tri" aria-label="Trier par">
+        <option value="date">Trier par date</option><option value="portee">Trier par portée</option><option value="taux">Trier par taux d'interaction</option><option value="devis">Trier par demandes de devis</option>
+      </select></label>
     </div>
     <div class="insight" id="insight"></div>
-  </section>
-
-  <section class="block" id="sara">
-    <div class="bh"><span class="num">04</span><h2>Campagne du salon SARA 2027</h2><span class="tag tag-demo">Démonstration</span></div>
-    <p class="sub">La date officielle n'est pas encore publiée par l'organisateur. La démonstration montre la phase « avant », lancée en semaine 8 : sondage, invitations et inscriptions.</p>
-    <div class="grid3" id="sara-k"></div>
-    <div class="grid2">
-      <div class="card">
-        <p class="cap">Sondage : quelle machine voulez-vous voir en démonstration ?</p>
-        <div class="bars" id="sondage"></div>
-      </div>
-      <div class="card">
-        <p class="cap">Des invitations aux rendez-vous au stand</p>
-        <div class="funnel" id="funnel"></div>
-      </div>
+    <div class="wall" id="wall"></div>
+    <div class="card tcard" id="tbox" hidden>
+      <table class="tbl" id="tbl"><thead><tr><th>Date</th><th>Réseau</th><th>Publication</th><th class="n">Portée</th><th class="n">Interactions</th><th class="n">Taux</th><th class="n">Devis</th></tr></thead><tbody></tbody><tfoot></tfoot></table>
     </div>
   </section>
-</main>
 
-<footer class="foot">
-  <div class="wrap">
-    <p><strong>Ce qui est réel, ce qui ne l'est pas.</strong> Sont réels, et marqués « Réel » : les abonnés Facebook et LinkedIn, les réactions LinkedIn et l'absence de compte Instagram et WhatsApp, relevés le 16/11/2026 sur les pages publiques de SACRI. Les sujets des publications viennent du calendrier éditorial proposé. Tout le reste (évolution des abonnés, portée, interactions, demandes de devis, sondage et invitations du SARA) est simulé pour la démonstration.</p>
+  <!-- AVANT / APRÈS -->
+  <section class="view" id="v-avap">
+    <div class="vh"><div><h1>Avant, après : les vrais posts de SACRI face aux nouveaux visuels</h1><p class="lede">À gauche, six Reels réellement publiés sur facebook.com/sacriofficiel, avec leurs vues relevées le 19/11/2026. À droite, le visuel de la nouvelle série qui traite le même sujet.</p></div></div>
+    <div class="avap" id="avap"></div>
+    <p class="src">Avant : Reels publics de la page Facebook de SACRI, vues et réactions relevées le 19/11/2026 sans connexion (audit des réseaux). Après : nouvelle série de visuels proposée, pas encore publiée.</p>
+  </section>
+
+  <!-- MOMENTS -->
+  <section class="view" id="v-moments">
+    <div class="vh"><div><h1>Les meilleurs jours et heures pour publier</h1><p class="lede">Indice d'audience en ligne par jour et par créneau, de 0 à 100, pour les réseaux choisis en haut de page.</p></div></div>
+    <div class="g3">
+      <div class="card span2">
+        <div class="ch-h"><div><p class="ct"><i data-i="flame"></i>Carte de chaleur</p><p class="cs" id="hm-s"></p></div><span class="tag">Démo</span></div>
+        <div class="hm" id="hm"></div>
+        <div class="hm-l"><span>Faible</span><i></i><span>Fort</span></div>
+      </div>
+      <div class="card">
+        <div class="ch-h"><div><p class="ct"><i data-i="clock"></i>Les 5 meilleurs créneaux</p><p class="cs">À réserver aux publications importantes</p></div></div>
+        <ol class="rank" id="top"></ol>
+      </div>
+    </div>
+    <div class="card">
+      <div class="ch-h"><div><p class="ct"><i data-i="mouse-pointer-click"></i>Taux d'interaction par type de contenu</p><p class="cs">Publications de la période filtrée</p></div></div>
+      <div class="chart ch-bars"><canvas id="c-ty" aria-label="Taux par type de contenu"></canvas></div>
+    </div>
+  </section>
+
+  <!-- COMPARABLES -->
+  <section class="view" id="v-comparables">
+    <div class="vh"><div><h1>SACRI face aux 8 comparables</h1><p class="lede">Abonnés relevés sur les pages publiques le 19/11/2026 (audit des réseaux). SACRI est en orange.</p></div>
+      <div class="seg" id="cmp-n"><button class="on" data-n="facebook"><i data-i="facebook"></i>Facebook</button><button data-n="linkedin"><i data-i="linkedin"></i>LinkedIn</button><button data-n="tous"><i data-i="layers"></i>Tous</button></div></div>
+    <div class="card">
+      <div class="ch-h"><div><p class="ct"><i data-i="trophy"></i>Abonnés par compte</p><p class="cs" id="cmp-s"></p></div><span class="tag tag-real">Réel</span></div>
+      <div class="chart ch-cmp"><canvas id="c-cmp" aria-label="Comparaison des abonnés"></canvas></div>
+      <p class="src">Sources : audit des réseaux sociaux de SACRI, pages publiques consultées sans connexion le 19/11/2026. Husqvarna et Bosch : chiffres de moteur de recherche, non datés.</p>
+    </div>
+  </section>
+
+  <!-- SARA -->
+  <section class="view" id="v-sara">
+    <div class="vh"><div><h1>Campagne du salon SARA 2027</h1><p class="lede">La date officielle n'est pas encore publiée par l'organisateur. La démonstration montre la phase « avant », lancée en semaine 8 : sondage, invitations et inscriptions.</p></div></div>
+    <div class="kpis k4" id="sara-k"></div>
+    <div class="g3">
+      <div class="card">
+        <div class="ch-h"><div><p class="ct"><i data-i="megaphone"></i>Votes au sondage</p><p class="cs">Par réseau</p></div><span class="tag">Démo</span></div>
+        <div class="chart cd"><canvas id="c-vote" aria-label="Votes par réseau"></canvas></div>
+      </div>
+      <div class="card span2">
+        <div class="ch-h"><div><p class="ct"><i data-i="sparkles"></i>Quelle machine voulez-vous voir en démonstration ?</p><p class="cs">Part des votes</p></div><span class="tag">Démo</span></div>
+        <div class="chart ch-bars s"><canvas id="c-sond" aria-label="Résultats du sondage"></canvas></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="ch-h"><div><p class="ct"><i data-i="users-round"></i>Des invitations aux rendez-vous au stand</p><p class="cs">Clients et prospects, WhatsApp et e-mail</p></div><span class="tag">Démo</span></div>
+      <div class="funnel" id="funnel"></div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <p><b>Ce qui est réel, ce qui ne l'est pas.</b> Sont réels, et marqués « Réel » : les abonnés Facebook et LinkedIn, les réactions LinkedIn et l'absence de compte Instagram et WhatsApp, relevés le 16/11/2026 sur les pages publiques de SACRI, ainsi que les abonnés des comparables relevés le 19/11/2026. Les sujets et visuels des publications viennent du calendrier éditorial, du plan de lancement et de la nouvelle série de visuels proposés. Tout le reste (évolution des abonnés, portée, interactions, demandes de devis, audience par créneau, sondage et invitations du SARA) est simulé pour la démonstration.</p>
     <p class="small">Le jour du tableau réel, ces chiffres viendraient des statistiques de chaque réseau et du registre des demandes de devis, mis à jour chaque lundi.</p>
-  </div>
-</footer>
+  </footer>
+  </main>
+</div>
+
+<div class="mdl" id="mdl" hidden role="dialog" aria-modal="true" aria-label="Publication">
+  <div class="mdl-bg" data-x></div>
+  <button class="mdl-nav prev" id="m-prev" aria-label="Publication précédente"><i data-i="chevron-left"></i></button>
+  <div class="mdl-box" id="m-box"></div>
+  <button class="mdl-nav next" id="m-next" aria-label="Publication suivante"><i data-i="chevron-right"></i></button>
+  <button class="mdl-x" data-x aria-label="Fermer"><i data-i="x"></i></button>
+</div>
+
+<nav class="tabs" id="tabs" aria-label="Navigation">
+  <button data-v="ensemble"><i data-i="layout-dashboard"></i><span>Ensemble</span></button>
+  <button data-v="publications"><i data-i="image"></i><span>Publications</span></button>
+  <button data-v="avap"><i data-i="arrow-left-right"></i><span>Avant/après</span></button>
+  <button data-v="moments"><i data-i="flame"></i><span>Moments</span></button>
+  <button data-v="comparables"><i data-i="trophy"></i><span>Marché</span></button>
+  <button data-v="sara"><i data-i="tent"></i><span>SARA</span></button>
+</nav>
+</div>
 
 <script src="assets/chart.umd.min.js?v=4"></script>
-<script src="assets/donnees.js?v=20261118a"></script>
-<script src="assets/app.js?v=20261118a"></script>
+<script src="assets/donnees.js?v=2027b"></script>
+<script src="assets/app.js?v=2027b"></script>
 </body>
 </html>

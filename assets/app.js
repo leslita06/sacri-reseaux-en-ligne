@@ -80,6 +80,7 @@
   Chart.defaults.font.family = 'Inter, system-ui, sans-serif';
   Chart.defaults.font.size = 12;
   Chart.defaults.color = '#64748B';
+  Chart.defaults.transitions.resize = { animation: { duration: 0 } };
   Chart.defaults.plugins.legend.display = false;
   Chart.defaults.maintainAspectRatio = false;
   Chart.defaults.animation.duration = 450;
